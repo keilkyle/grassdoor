@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
 
   get "/lawns" do
     lawns = Lawn.all
-    lawns.to_json
+    lawns.to_json(include: :reviews)
   end
 
   post "/lawns" do
@@ -17,6 +17,11 @@ class ApplicationController < Sinatra::Base
       image_url: params[:image_url]
     )
     lawn.to_json
+  end
+
+  get "/lawns/:id" do
+    lawn = Lawn.find(params[:id])
+    lawn.to_json(include: :reviews)
   end
 
   get "/reviews" do

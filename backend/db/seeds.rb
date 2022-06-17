@@ -46,5 +46,11 @@ Review.create(
     stars: 4   
 )
 
+Review.create(
+    body: "It's no White House, but it's a lawn, alright.",
+    author: "Christian Keil",
+    lawn_id: 15,
+    stars: 4   
+)
 
 puts "✅ Done seeding!"
