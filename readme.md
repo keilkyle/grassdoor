@@ -13,8 +13,6 @@ App
     - update review (patch)
     - delete review (delete)
 
-**todo: application controller, can't handle requests yet
-
 Database
 
 - lawns
