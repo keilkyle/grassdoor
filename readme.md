@@ -13,6 +13,8 @@ App
     - update review (patch)
     - delete review (delete)
 
+**todo: application controller, can't handle requests yet
+
 Database
 
 - lawns
@@ -24,5 +26,5 @@ Database
     belongs_to lawn
     string reviewer
     integer stars
-    review_date timestamp
+    review_date timestamp <- this isn't seeded yet, or working
 
