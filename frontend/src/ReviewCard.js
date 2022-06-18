@@ -26,13 +26,14 @@ function ReviewCard({deleteHandler, editHandler, review}) {
     }
 
     return (
-        <>
-            <p>{review.author}</p>
+        <div className="review-card">
+            <p className="stars">Review from:</p>
+            <h3>{review.author}</h3>
+            <p className="stars">{"Stars: "+ review.stars}</p>
             <p>{review.body}</p>
-            <p>{"Stars: "+ review.stars}</p>
             <button onClick={deleteReview}>Delete Review</button>
             <button onClick={addStar}>Add a Star to this Review!</button>
-        </>
+        </div>
     )
 }
 

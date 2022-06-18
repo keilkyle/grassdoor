@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ReviewCard from "./ReviewCard";
 import AddReview from "./AddReview"
+import LawnCard from "./LawnCard";
 
 function LawnDetail() {
 
@@ -36,24 +37,24 @@ function LawnDetail() {
     if (lawn.reviews == null || lawn.reviews.length > 0) {
         return (
             <>
-                <a href="/">Click here to return home</a>
-                <img alt= {lawn.name} src={lawn.image_url} className="lawn" />
-                <h1>{lawn.name}</h1>
-                <h2>{lawn.address}</h2>
-                <p>Users rate this lawn {lawn.reviews ? lawn.reviews?.map((lawn) => lawn.stars)?.reduce((a, b) => a+b) / lawn.reviews?.length  : "none"} stars out of 5.</p>
-                {lawn.reviews ? lawn.reviews.map((review) => <ReviewCard editHandler={editHandler} deleteHandler={deleteHandler} key={review.id} review={review} />): "No reviews yet."}
-                <AddReview lawn_id={lawn.id} addReviewer={addReviewer}/>
+                <div className="left">
+                    <LawnCard lawn={lawn} key={lawn.id} />
+                    {lawn.reviews ? lawn.reviews.map((review) => <ReviewCard editHandler={editHandler} deleteHandler={deleteHandler} key={review.id} review={review} />): "No reviews yet."}
+                </div>
+                <div className="right">
+                    <AddReview lawn_id={lawn.id} addReviewer={addReviewer}/>
+                </div>
             </>
         )
     } else {
         return (
             <>
-                <a href="/">Click here to return home</a>
-                <img alt= {lawn.name} src={lawn.image_url} className="lawn" />
-                <h1>{lawn.name}</h1>
-                <h2>{lawn.address}</h2>
-                <p>Users haven't rated this lawn yet.</p>
-                <AddReview lawn_id={lawn.id} addReviewer={addReviewer}/>
+                <div className="left">
+                    <LawnCard lawn={lawn} key={lawn.id} />
+                </div>
+                <div className="right">
+                    <AddReview lawn_id={lawn.id} addReviewer={addReviewer}/>
+                </div> 
             </>
         )
     }

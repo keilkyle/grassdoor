@@ -25,10 +25,17 @@ function AddReview ({addReviewer, lawn_id}) {
         })
         .then(resp => resp.json())
         .then(data => addReviewer(data))
+
+        authorChanger("")
+        bodyChanger("")
+        starsChanger("")
     }
 
     return (
+        <>
+        <h2>Add your review of this lawn!</h2>
         <form onSubmit={submitHandler}>
+            <label>Name</label>
             <input
                 type="text"
                 name="author"
@@ -36,13 +43,17 @@ function AddReview ({addReviewer, lawn_id}) {
                 value={author}
                 onChange={(e) => authorChanger(e.target.value)}
             />
-            <input
+            <label>Review</label>
+            <textarea
+                className="big-input"
                 type="text"
+                rows="3"
                 name="body"
                 label="body"
                 value={body}
                 onChange={(e) => bodyChanger(e.target.value)}
-            />
+            ></textarea>
+            <label>Stars</label> 
             <input
                 type="text"
                 name="stars"
@@ -52,6 +63,8 @@ function AddReview ({addReviewer, lawn_id}) {
             />
             <button type="submit">Add New Lawn</button>
         </form>
+        </>
+  
     )
     }
 

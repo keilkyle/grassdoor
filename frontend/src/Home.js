@@ -17,7 +17,6 @@ function Home() {
 
     function submitHandler(e) {
         e.preventDefault()
-
         const newLawn = {
             name: name,
             image_url: image,
@@ -31,24 +30,27 @@ function Home() {
             body: JSON.stringify(newLawn)
         })
         .then(resp => resp.json())
-        .then(data => adder(data))
-    }
+        .then(data => {
+            const newHomes = [...homes, data]
+            homeSetter(newHomes)
+            nameFormer("")
+            imageFormer("")
+            addressFormer("")
+        })
 
-    function adder(data){
-        const newHomes = {...homes, data}
-        homeSetter(newHomes)
     }
 
     return (
         <>
             <div className="left">
-                <h1>Here's all the lawns.</h1>
                 <div>
-                    {homes.map((lawn) => <LawnCard key={lawn.id} lawn={lawn}/>)}
+                    {homes?.map((lawn) => <LawnCard key={lawn.id} lawn={lawn}/>)}
                 </div>  
             </div>
             <div className="right">
+                <h2>Add your home to our list today!</h2>
                 <form onSubmit={submitHandler}>
+                    <label>Name</label>
                     <input
                         type="text"
                         name="name"
@@ -56,6 +58,7 @@ function Home() {
                         value={name}
                         onChange={(e) => nameFormer(e.target.value)}
                     />
+                    <label>Address</label>
                      <input
                         type="text"
                         name="address"
@@ -63,6 +66,7 @@ function Home() {
                         value={address}
                         onChange={(e) => addressFormer(e.target.value)}
                     />
+                    <label>Image URL</label>
                      <input
                         type="text"
                         name="image_url"
