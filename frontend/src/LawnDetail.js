@@ -31,10 +31,11 @@ function LawnDetail() {
     useEffect(() => {
         fetch(`http://localhost:9292${window.location.pathname}`)
         .then(resp => resp.json())
-        .then(data => changelawn(data))
+        .then(data => {
+            changelawn(data)})
     }, [])
     
-    if (lawn.reviews == null || lawn.reviews.length > 0) {
+    if (lawn.reviews !== undefined && lawn.reviews.length > 0) {
         return (
             <>
                 <div className="left">

@@ -2,7 +2,7 @@ import React from "react";
 
 function LawnCard({lawn}) {
 
-    if (lawn.reviews == null || lawn.reviews.length > 0) {
+    if (lawn.reviews !== undefined && lawn.reviews.length > 0) {
         return (
             <div className="lawn-card">
                 <div className="lawn-pic">
