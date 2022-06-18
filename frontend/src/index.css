@@ -16,3 +16,13 @@ code {
   max-width: 20vw;
   display: block;
 }
+
+.left {
+  width: 50vw;
+  float:left;
+}
+
+.right {
+  width: 50vw;
+  float:left;
+}
