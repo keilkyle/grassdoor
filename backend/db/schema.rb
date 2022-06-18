@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_17_050443) do
+ActiveRecord::Schema.define(version: 2022_06_18_170407) do
 
   create_table "lawns", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2022_06_17_050443) do
     t.string "body"
     t.string "author"
     t.integer "lawn_id"
-    t.datetime "review_date"
     t.integer "stars"
   end
 
