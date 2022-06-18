@@ -61,7 +61,7 @@ function AddReview ({addReviewer, lawn_id}) {
                 value={stars}
                 onChange={(e) => starsChanger(e.target.value)}
             />
-            <button type="submit">Add New Lawn</button>
+            <button type="submit">Submit Review</button>
         </form>
         </>
   

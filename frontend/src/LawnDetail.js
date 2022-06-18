@@ -40,7 +40,7 @@ function LawnDetail() {
             <>
                 <div className="left">
                     <LawnCard lawn={lawn} key={lawn.id} />
-                    {lawn.reviews ? lawn.reviews.map((review) => <ReviewCard editHandler={editHandler} deleteHandler={deleteHandler} key={review.id} review={review} />): "No reviews yet."}
+                    {lawn.reviews.map((review) => <ReviewCard editHandler={editHandler} deleteHandler={deleteHandler} key={review.id} review={review} />)}
                 </div>
                 <div className="right">
                     <AddReview lawn_id={lawn.id} addReviewer={addReviewer}/>

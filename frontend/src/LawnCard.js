@@ -6,7 +6,7 @@ function LawnCard({lawn}) {
         return (
             <div className="lawn-card">
                 <div className="lawn-pic">
-                    <img src={lawn.image_url} className="lawn" />
+                    <img alt= {lawn.id} src={lawn.image_url} className="lawn" />
                 </div>
                 <div className="lawn-deets">
                     <a href={'/lawns/' + lawn.id}>
@@ -21,7 +21,7 @@ function LawnCard({lawn}) {
         return (
             <div className="lawn-card">
                 <div className="lawn-pic">
-                    <img src={lawn.image_url} className="lawn" />
+                    <img src={lawn.image_url} alt={lawn.id} className="lawn" />
                 </div>
                 <div className="lawn-deets">
                     <a href={'/lawns/' + lawn.id}>
