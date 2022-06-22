@@ -25,6 +25,7 @@ function LawnDetail() {
     function addReviewer(obj) {
         const newReviews = [...lawn.reviews, obj]
         const newLawns = {...lawn, reviews: newReviews}
+        debugger
         changelawn(newLawns)
     }
 

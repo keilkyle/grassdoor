@@ -39,7 +39,6 @@ class ApplicationController < Sinatra::Base
       body: params[:body],
       author: params[:author],
       lawn_id: params[:lawn_id],
-      review_date: params[:review_date],
       stars: params[:stars]
     )
     review.to_json
